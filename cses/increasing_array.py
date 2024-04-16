@@ -25,26 +25,24 @@ stdint =lambda: i4nt(stdin.readline())
 stdpr  =lambda x: stdout.write(str(x))
 
 mod=1000000007
-		
+        
 def main():
-    a = input()
-    n = len(a)
-    ans = 0
-    temp = 1
+    n = int(input())
+    a = list(map(int, input().split()))
+    min_moves = 0
     for i in range(1,n):
-        if a[i] == a[i - 1]:
-            temp += 1
-        else:
-            ans = max(ans, temp)
-            temp = 1
-    ans = max(ans, temp)
-    print(ans)
-		
-			
-			
+    	if a[i] < a[i - 1]:
+    		min_moves += a[i - 1] - a[i]
+    		a[i] = a[i - 1]
+    print(min_moves)
+    		
+
+            
 if __name__ == "__main__":
-	t = 1
-	# t = int(input())
-	while t > 0:
-		main()
-		t -= 1
+    t = 1
+    # t = int(input())
+    while t > 0:
+    	main()
+    	t -= 1
+
+

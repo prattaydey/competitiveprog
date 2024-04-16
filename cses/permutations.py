@@ -25,26 +25,30 @@ stdint =lambda: i4nt(stdin.readline())
 stdpr  =lambda x: stdout.write(str(x))
 
 mod=1000000007
-		
+        
 def main():
-    a = input()
-    n = len(a)
-    ans = 0
-    temp = 1
-    for i in range(1,n):
-        if a[i] == a[i - 1]:
-            temp += 1
-        else:
-            ans = max(ans, temp)
-            temp = 1
-    ans = max(ans, temp)
-    print(ans)
-		
-			
-			
+    n = int(input())
+    s = ""
+    if n == 2 or n == 3:
+    	print("NO SOLUTION")
+    	return
+    for i in range(1,n + 1):
+    	if i % 2 == 0:
+    		s += str(i) + " "
+    		
+    for i in range(1, n + 1):
+    	if i % 2 == 1:
+    		s += str(i) + " "
+    print(s)
+    
+    
+
+            
 if __name__ == "__main__":
-	t = 1
-	# t = int(input())
-	while t > 0:
-		main()
-		t -= 1
+    t = 1
+    # t = int(input())
+    while t > 0:
+    	main()
+    	t -= 1
+
+
